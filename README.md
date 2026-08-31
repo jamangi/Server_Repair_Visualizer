@@ -1,2 +1,46 @@
-# Server_Repair_Visualizer
-App to help memorize component names and locations within a server for repair
+# Server Repair Visualizer
+
+Server Repair Visualizer is a browser-based study tool for repair technicians who need to learn more than a parts list. It teaches:
+
+- what each component, board, cable, connector, and service assembly is called;
+- where it is located in a specific computer or server model;
+- what it connects to;
+- what blocks it from view or removal; and
+- which parts must be removed first during a service sequence.
+
+The first target is the **Dell Server 9712a**, a liquid-cooled 1U compute sled used in Dell's GB200-era rack-scale AI system. The identification is supported by the supplied Dell configuration export and Dell's own service documentation. See [Dell 9712a research](docs/research/DELL_9712A.md).
+
+## Product direction
+
+The primary experience will place an SVG interaction layer over a rectangular source image. Polygon or path geometry lives in a JSON sidecar, so the source image does not need to be converted into or manually edited as an SVG.
+
+Users will be able to hover, focus, or tap a visible component to highlight its full shape, then select it to learn its name, aliases, purpose, connectors, and service relationships. A depth control will support an optional X-ray study mode for buried parts. Actual removal order will be represented separately as dependency data rather than inferred from visual depth alone.
+
+SVG regions are the recommended runtime approach. A grid may still be useful as an authoring or debugging aid, but it is too coarse to be the main learner-facing interaction model. The reasoning is recorded in [Interaction model](docs/architecture/INTERACTION_MODEL.md).
+
+## Repository map
+
+| Path | Purpose |
+| --- | --- |
+| [`docs/research/`](docs/research/) | Evidence about the target server and component vocabulary |
+| [`docs/architecture/`](docs/architecture/) | Interaction, layering, connection, and data-model decisions |
+| [`docs/decisions/`](docs/decisions/) | User approval gates and settled defaults |
+| [`docs/roadmap/`](docs/roadmap/) | Ordered, testable tasks from prototype through GitHub Pages release |
+
+Application source and deployment automation will be added after the first reference-image decision in [Approvals](docs/decisions/APPROVALS.md). This keeps geometry work tied to an image that is accurate and safe to publish.
+
+## Current status
+
+- Server model identified with high confidence.
+- Official interior diagram and service manual located.
+- SVG + JSON interaction architecture selected.
+- Component depth, connection graph, and removal dependency concepts separated.
+- Implementation plan and approval gates documented.
+
+No service tag or device-specific configuration export is committed to this public-facing repository.
+
+## Source starting points
+
+- [Dell Server 9712a/9712b Installation and Service Manual](https://www.dell.com/support/manuals/en-us/dell-server-9712a/server_9712a_ism/Introduction?guid=guid-92f4ae28-dee6-4ba1-96c2-64326abb8d51&lang=en-us)
+- [Dell manual: Inside the system](https://www.dell.com/support/manuals/en-us/dell-server-9712a/server_9712a/inside-the-system?guid=guid-db45dd2e-26b7-4c9b-84ee-90385df57b15&lang=en-us)
+- [Implementation task sequence](docs/roadmap/TASKS.md)
