@@ -48,7 +48,7 @@ Dell publishes an open-system diagram on the [Inside the system](https://www.del
 
 The same manual includes step-specific images for bays, boards, cards, and cables. Those images can support multiple disassembly scenes and more accurate region tracing than a single top-down image.
 
-An official image being publicly viewable does not automatically establish permission to redistribute it as an application asset. For that reason, this repository links to the Dell material but does not copy it. The reference-image choice is an explicit gate in [Approvals](../decisions/APPROVALS.md).
+An official image being publicly viewable does not automatically establish permission to redistribute it as an application asset. For that reason, this repository links to the Dell material but does not copy it. A-001 in [Approvals](../decisions/APPROVALS.md) instead selects an original realistic generated illustration, with Dell imagery retained as a factual layout reference.
 
 ## Initial component vocabulary
 

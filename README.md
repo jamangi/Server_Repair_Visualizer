@@ -26,8 +26,9 @@ SVG regions are the recommended runtime approach. A grid may still be useful as 
 | [`docs/architecture/`](docs/architecture/) | Interaction, layering, connection, and data-model decisions |
 | [`docs/decisions/`](docs/decisions/) | User approval gates and settled defaults |
 | [`docs/roadmap/`](docs/roadmap/) | Ordered, testable tasks from prototype through GitHub Pages release |
+| [`docs/roadmap/tasks/`](docs/roadmap/tasks/) | Self-contained task packets with recommended reasoning effort in each filename |
 
-Application source and deployment automation will be added after the first reference-image decision in [Approvals](docs/decisions/APPROVALS.md). This keeps geometry work tied to an image that is accurate and safe to publish.
+All three initial product gates are approved. The first scene will use an original, realistic generated technical illustration, validated against Dell documentation and technician knowledge before geometry is finalized. Implementation is organized as [self-contained task packets](docs/roadmap/TASKS.md), so a task owner can work from one packet without reading the full project history.
 
 ## Current status
 
@@ -35,7 +36,9 @@ Application source and deployment automation will be added after the first refer
 - Official interior diagram and service manual located.
 - SVG + JSON interaction architecture selected.
 - Component depth, connection graph, and removal dependency concepts separated.
-- Implementation plan and approval gates documented.
+- Original realistic illustration selected for the first public scene.
+- Naming policy and first-release scope approved.
+- Implementation plan split into self-contained task packets.
 
 No service tag or device-specific configuration export is committed to this public-facing repository.
 
