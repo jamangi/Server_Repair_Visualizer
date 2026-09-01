@@ -1,0 +1,841 @@
+{
+  "schemaVersion": 1,
+  "modelId": "dell-server-9712a",
+  "title": "Dell Server 9712a acronym and designator map",
+  "essayPath": "docs/research/DELL_9712A_COMPONENT_WALKTHROUGH.md",
+  "ordering": "Dependency-aware alphabetical order; nested terms are expanded in the parent entry and referenced through dependsOn.",
+  "confidenceValues": {
+    "confirmed": "Expanded by Dell, a standards body, or the named vendor.",
+    "documented-alternate": "Used by an authoritative source in the GB200 product family but not selected by the Dell 9712a manual.",
+    "working-expansion": "Useful and contextually plausible but not confirmed by Dell.",
+    "not-an-acronym": "A brand, product name, form-factor code, bay label, or reference designator.",
+    "unit": "A measurement abbreviation rather than a component name."
+  },
+  "locationConfidenceValues": {
+    "confirmed": "The location is supported by Dell's public manual or front-view material.",
+    "lesson-observation": "The location is retained from the supplied repair lesson and needs a second check.",
+    "mixed": "The broad route is supported, but not every endpoint or side assignment is confirmed."
+  },
+  "entries": [
+    {
+      "term": "RU",
+      "forms": ["RU", "1RU", "1U"],
+      "kind": "unit",
+      "expansions": [
+        { "text": "rack unit", "confidence": "confirmed" },
+        { "text": "one rack unit", "appliesTo": "1RU and 1U", "confidence": "confirmed" }
+      ],
+      "dependsOn": [],
+      "examples": ["1RU metal chassis"],
+      "chassisLocations": [
+        {
+          "zone": "whole-chassis",
+          "side": "whole-chassis",
+          "detail": "Describes the height of the entire sled, not one internal component.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "term": "B bay / C bay",
+      "forms": ["B bay", "C bay", "left B bay", "right B bay"],
+      "kind": "bay-designator",
+      "expansions": [
+        { "text": "position designators; the letters have no published expansion", "confidence": "not-an-acronym" }
+      ],
+      "dependsOn": [],
+      "examples": ["left B bay", "C bay", "right B bay"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "left",
+          "detail": "Left B bay contains the BlueField-3, NIC, IPEX, riser, and OSFP group in the studied configuration.",
+          "confidence": "confirmed"
+        },
+        {
+          "zone": "front",
+          "side": "center",
+          "detail": "C bay contains the E1.S drives, backplanes, and front I/O group.",
+          "confidence": "confirmed"
+        },
+        {
+          "zone": "front",
+          "side": "right",
+          "detail": "Right B bay contains the PSB, PCIe riser, and OSFP group in the studied configuration.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "term": "Bianca",
+      "forms": ["Bianca", "Bianca 0", "Bianca 1", "Bianca board"],
+      "kind": "board-name",
+      "expansions": [
+        { "text": "Dell/NVIDIA motherboard name; no acronym expansion", "confidence": "not-an-acronym" }
+      ],
+      "dependsOn": [],
+      "examples": ["left Bianca", "right Bianca", "Bianca motherboards"],
+      "chassisLocations": [
+        {
+          "zone": "rear",
+          "side": "left",
+          "detail": "Left motherboard; lesson-numbered Bianca 0.",
+          "confidence": "lesson-observation"
+        },
+        {
+          "zone": "rear",
+          "side": "right",
+          "detail": "Right motherboard; lesson-numbered Bianca 1.",
+          "confidence": "lesson-observation"
+        }
+      ],
+      "sourceIds": ["dell-9712a-inside-system", "catalog-review-queue"]
+    },
+    {
+      "term": "BlueField-3",
+      "forms": ["BlueField-3", "BlueField 3"],
+      "kind": "product-name",
+      "expansions": [
+        { "text": "NVIDIA product-family name; no acronym expansion", "confidence": "not-an-acronym" }
+      ],
+      "dependsOn": ["DPU"],
+      "examples": ["BlueField-3 DPU", "BlueField-3 card"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "left",
+          "detail": "Large card in the left B bay in the studied PSB configuration.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-inside-system", "dell-9712a-left-bay"]
+    },
+    {
+      "term": "BMC",
+      "forms": ["BMC", "BMC board", "BMC LAN"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Baseboard Management Controller", "confidence": "confirmed" },
+        { "text": "Board Management Controller", "confidence": "documented-alternate" }
+      ],
+      "dependsOn": ["LAN"],
+      "examples": ["BMC board", "BMC LAN port", "BMC cable"],
+      "chassisLocations": [
+        {
+          "zone": "middle",
+          "side": "left-center",
+          "detail": "BMC board in the compact PDB/BMC tray just behind or beside the fan bank.",
+          "confidence": "confirmed"
+        },
+        {
+          "zone": "front",
+          "side": "center-right",
+          "detail": "The BMC LAN port is exposed on the front panel beside the E1.S drive row.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-inside-system", "nvidia-dgx-gb-rack-guide"]
+    },
+    {
+      "term": "C-Link",
+      "forms": ["C-Link", "Clink", "Clinks"],
+      "kind": "link-label",
+      "expansions": [
+        { "text": "No dependable public expansion found; preserve as a link-family label", "confidence": "not-an-acronym" },
+        { "text": "chip link, compute link, or coherent link", "confidence": "working-expansion", "note": "Possible readings only; none is validated for this cable." }
+      ],
+      "dependsOn": [],
+      "examples": ["C-Link cable"],
+      "chassisLocations": [
+        {
+          "zone": "middle",
+          "side": "center",
+          "detail": "Lesson-observed in the central cable-management field; exact endpoints are unverified.",
+          "confidence": "lesson-observation"
+        }
+      ],
+      "sourceIds": ["nvidia-dgx-gb-rack-guide", "catalog-review-queue"]
+    },
+    {
+      "term": "DPU",
+      "forms": ["DPU"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Data Processing Unit", "confidence": "confirmed" }
+      ],
+      "dependsOn": [],
+      "examples": ["BlueField-3 data processing unit"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "left",
+          "detail": "Describes the BlueField-3 card in the left B bay.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-left-bay", "nvidia-mission-control-terms"]
+    },
+    {
+      "term": "EDSFF",
+      "forms": ["EDSFF"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Enterprise and Datacenter Standard Form Factor", "confidence": "confirmed" },
+        { "text": "Enterprise and Datacenter SSD Form Factor", "confidence": "documented-alternate", "note": "Older industry wording." }
+      ],
+      "dependsOn": ["SSD"],
+      "examples": ["EDSFF E1.S backplane"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "center",
+          "detail": "Standards family for the E1.S drives and backplanes in the C bay.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["snia-edsff", "dell-9712a-service-manual"]
+    },
+    {
+      "term": "E1.S",
+      "forms": ["E1.S"],
+      "kind": "form-factor-designator",
+      "expansions": [
+        { "text": "EDSFF 1U Short", "confidence": "confirmed" },
+        { "text": "Enterprise and Datacenter Standard Form Factor, one-rack-unit short", "confidence": "confirmed" }
+      ],
+      "dependsOn": ["EDSFF", "RU"],
+      "examples": ["E1.S drive carrier", "E1.S backplane"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "center",
+          "detail": "Eight narrow drive carriers in the C bay and their two lesson-numbered backplane sections directly behind them.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["snia-edsff", "dell-9712a-inside-system"]
+    },
+    {
+      "term": "Gb",
+      "forms": ["Gb", "1 Gb"],
+      "kind": "unit",
+      "expansions": [
+        { "text": "gigabit", "confidence": "confirmed" }
+      ],
+      "dependsOn": [],
+      "examples": ["1 Gb NIC", "1 Gb Host LAN"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "left",
+          "detail": "Used for the 1 Gb NIC and Host LAN connection in the left B bay.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-left-bay"]
+    },
+    {
+      "term": "HMC",
+      "forms": ["HMC", "HMC module", "HMC cable"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Host Management Controller", "confidence": "documented-alternate", "note": "Used by the NVIDIA DGX GB rack user guide." },
+        { "text": "Hardware Management Controller", "confidence": "documented-alternate", "note": "Used by NVIDIA Mission Control terms." }
+      ],
+      "dependsOn": ["J / JP numbers"],
+      "examples": ["HMC module", "HMC J21", "HMC J22", "interposer-to-HMC cables"],
+      "chassisLocations": [
+        {
+          "zone": "rear",
+          "side": "left",
+          "detail": "Bracketed at the chassis side above or at the left Bianca board; HMC J21/J22 leads connect to the left Bianca.",
+          "confidence": "confirmed"
+        },
+        {
+          "zone": "rear-middle",
+          "side": "left-center",
+          "detail": "Lesson-mapped HMC cables continue to the interposer.",
+          "confidence": "lesson-observation"
+        }
+      ],
+      "sourceIds": ["dell-9712a-hmc", "dell-9712a-left-bay", "nvidia-dgx-gb-rack-guide", "nvidia-mission-control-terms"]
+    },
+    {
+      "term": "I/O",
+      "forms": ["I/O", "IO"],
+      "kind": "initialism",
+      "expansions": [
+        { "text": "Input/Output", "confidence": "confirmed" }
+      ],
+      "dependsOn": [],
+      "examples": ["front panel I/O module", "I/O panel card"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "center-right",
+          "detail": "Front panel I/O module beside the E1.S carriers; the term also appears on internal board and connector labels.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-inside-system", "dell-9712a-service-manual"]
+    },
+    {
+      "term": "IPEX",
+      "forms": ["I-PEX", "IPEX", "IPEX board", "IPEX cable"],
+      "kind": "brand-name",
+      "expansions": [
+        { "text": "Innovative Product development & Engineering solutions eXpert", "confidence": "confirmed", "note": "Official corporate-name expansion from I-PEX; in Dell labels it identifies the vendor/product family, not electrical function." }
+      ],
+      "dependsOn": [],
+      "examples": ["IPEX board", "IPEX cable", "IPEX bridge cable"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "left",
+          "detail": "IPEX board and paired black-and-white harnesses in the left B bay beside the BlueField-3 DPU and PCIe auxiliary card.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-ipex", "ipex-company-name"]
+    },
+    {
+      "term": "J / JP numbers",
+      "forms": ["J4", "J21", "J22", "JP1"],
+      "kind": "connector-reference-designator",
+      "expansions": [
+        { "text": "board-specific jack/connector or jumper-style reference designator; not a functional acronym", "confidence": "not-an-acronym" }
+      ],
+      "dependsOn": [],
+      "examples": ["PDB J4", "HMC J21", "HMC J22", "Mezz Board_LAN JP1"],
+      "chassisLocations": [
+        {
+          "zone": "middle",
+          "side": "left-center",
+          "detail": "J4 identifies a PDB connection.",
+          "confidence": "confirmed"
+        },
+        {
+          "zone": "rear",
+          "side": "left",
+          "detail": "J21 and J22 identify HMC/left-Bianca connections.",
+          "confidence": "confirmed"
+        },
+        {
+          "zone": "front",
+          "side": "left",
+          "detail": "JP1 identifies the mezzanine/NIC power connection.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-left-bay"]
+    },
+    {
+      "term": "LAN",
+      "forms": ["LAN", "Host LAN", "BMC LAN"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Local Area Network", "confidence": "confirmed" }
+      ],
+      "dependsOn": ["BMC"],
+      "examples": ["Host LAN port", "BMC LAN port"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "left",
+          "detail": "Host LAN jack on the left B bay/front face.",
+          "confidence": "confirmed"
+        },
+        {
+          "zone": "front",
+          "side": "center-right",
+          "detail": "BMC LAN jack beside the E1.S drive and front-I/O area.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-front-view"]
+    },
+    {
+      "term": "M.2",
+      "forms": ["M.2", "M.2 riser", "M.2 SSD"],
+      "kind": "form-factor-designator",
+      "expansions": [
+        { "text": "official form-factor name; not a current acronym", "confidence": "not-an-acronym" },
+        { "text": "Next Generation Form Factor", "confidence": "documented-alternate", "note": "Earlier development name, not the expansion of M.2." }
+      ],
+      "dependsOn": ["SSD", "NVMe"],
+      "examples": ["M.2 riser card", "M.2 SSD"],
+      "chassisLocations": [
+        {
+          "zone": "rear",
+          "side": "right",
+          "detail": "M.2 riser and its SSD plug into the right Bianca board.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-m2"]
+    },
+    {
+      "term": "Mezz",
+      "forms": ["Mezz", "Mezz Board_LAN"],
+      "kind": "abbreviation",
+      "expansions": [
+        { "text": "mezzanine", "confidence": "confirmed" }
+      ],
+      "dependsOn": ["LAN", "J / JP numbers"],
+      "examples": ["Mezz Board_LAN JP1"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "left",
+          "detail": "Appears in the cable label for the 1 Gb NIC/mezzanine-board power connection in the left B bay.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-left-bay"]
+    },
+    {
+      "term": "mm",
+      "forms": ["mm"],
+      "kind": "unit",
+      "expansions": [
+        { "text": "millimetre or millimeter", "confidence": "confirmed" }
+      ],
+      "dependsOn": [],
+      "examples": ["40 × 56 mm fan"],
+      "chassisLocations": [
+        {
+          "zone": "middle-front",
+          "side": "full-width",
+          "detail": "Used for the dimensions of each of the eight fans in the transverse fan bank.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "term": "NIC",
+      "forms": ["NIC", "NIC board", "NIC card"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Network Interface Controller", "confidence": "confirmed" },
+        { "text": "Network Interface Card", "confidence": "documented-alternate", "note": "Common physical-card reading." }
+      ],
+      "dependsOn": ["LAN", "Gb"],
+      "examples": ["1 Gb NIC board", "Host LAN"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "left",
+          "detail": "Small 1 Gb board in the left B bay; its Host LAN jack is visible on the front.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-left-bay", "dell-9712a-front-view"]
+    },
+    {
+      "term": "NVIDIA",
+      "forms": ["NVIDIA"],
+      "kind": "brand-name",
+      "expansions": [
+        { "text": "company and brand name; no acronym expansion in this context", "confidence": "not-an-acronym" }
+      ],
+      "dependsOn": [],
+      "examples": ["NVIDIA BlueField-3", "NVIDIA GB200 platform"],
+      "chassisLocations": [
+        {
+          "zone": "multiple",
+          "side": "multiple",
+          "detail": "Supplier/platform name associated with BlueField-3 and the GB200 compute platform, not one standalone chassis component.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["nvidia-dgx-gb-rack-guide"]
+    },
+    {
+      "term": "NVM / NVMe",
+      "forms": ["NVM", "NVMe"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Non-Volatile Memory", "appliesTo": "NVM", "confidence": "confirmed" },
+        { "text": "NVM Express", "appliesTo": "NVMe", "confidence": "confirmed" },
+        { "text": "Non-Volatile Memory Express", "appliesTo": "NVMe", "confidence": "confirmed" }
+      ],
+      "dependsOn": ["PCIe", "SSD"],
+      "examples": ["E1.S NVMe drive", "M.2 NVMe SSD"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "center",
+          "detail": "The eight E1.S SSDs use NVMe storage.",
+          "confidence": "confirmed"
+        },
+        {
+          "zone": "rear",
+          "side": "right",
+          "detail": "The M.2 SSD on the right-Bianca riser is an NVMe storage device in the studied configuration.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["nvmexpress", "dell-9712a-system-features", "dell-9712a-m2"]
+    },
+    {
+      "term": "OSFP",
+      "forms": ["OSFP", "OSFP card"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Octal Small Form Factor Pluggable", "confidence": "confirmed" }
+      ],
+      "dependsOn": [],
+      "examples": ["left OSFP card", "right OSFP card", "OSFP openings"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "left",
+          "detail": "One low OSFP card in the left B bay, presenting two front openings.",
+          "confidence": "confirmed"
+        },
+        {
+          "zone": "front",
+          "side": "right",
+          "detail": "One low OSFP card in the right B bay, presenting two front openings.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["osfp-msa", "dell-9712a-inside-system", "dell-9712a-front-view"]
+    },
+    {
+      "term": "PCIe",
+      "forms": ["PCIe", "PCI Express"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Peripheral Component Interconnect Express", "confidence": "confirmed" }
+      ],
+      "dependsOn": [],
+      "examples": ["PCIe cable", "PCIe riser", "PCIe auxiliary card", "PCIe Switch Board"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "left",
+          "detail": "BlueField-3 and riser/auxiliary-card area in the left B bay.",
+          "confidence": "confirmed"
+        },
+        {
+          "zone": "front",
+          "side": "right",
+          "detail": "PSB and riser area in the right B bay.",
+          "confidence": "confirmed"
+        },
+        {
+          "zone": "front-to-rear",
+          "side": "left and right channels",
+          "detail": "PCIe/Ultra-Pass cable paths continue through the fan-channel area toward the Bianca boards.",
+          "confidence": "mixed"
+        }
+      ],
+      "sourceIds": ["pci-sig", "dell-9712a-left-bay", "dell-9712a-psb"]
+    },
+    {
+      "term": "PDB",
+      "forms": ["PDB", "PDB board", "PDB tray"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Power Distribution Board", "confidence": "confirmed" }
+      ],
+      "dependsOn": ["J / JP numbers"],
+      "examples": ["PDB", "PDB tray", "PDB J4"],
+      "chassisLocations": [
+        {
+          "zone": "middle",
+          "side": "left-center",
+          "detail": "Compact PDB/PDB-tray assembly just behind or beside the fan bank, adjacent to the BMC board.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-inside-system", "dell-9712a-left-bay"]
+    },
+    {
+      "term": "PSB",
+      "forms": ["PSB", "PSB board", "PSB enclosure"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "PCIe Switch Board", "confidence": "working-expansion" },
+        { "text": "PCIe Switching Board", "confidence": "working-expansion", "note": "Natural grammatical variant of the same proposed meaning." }
+      ],
+      "dependsOn": ["PCIe"],
+      "examples": ["PCIe PSB", "PSB configuration", "busbar power cable to PSB"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "right",
+          "detail": "Broad card/enclosure seated in a PCIe riser in the right B bay, beside the right OSFP card.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-inside-system", "dell-9712a-psb", "nvidia-dgx-gb-rack-guide"]
+    },
+    {
+      "term": "QD",
+      "forms": ["QD", "QDs", "floating QD", "floating QDs"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Quick Disconnect", "confidence": "confirmed" },
+        { "text": "Quick Disconnects", "appliesTo": "QDs", "confidence": "confirmed" }
+      ],
+      "dependsOn": [],
+      "examples": ["floating quick disconnect", "floating QDs"],
+      "chassisLocations": [
+        {
+          "zone": "rear",
+          "side": "left and right",
+          "detail": "At the rear ends of the two internal coolant manifolds where the sled meets the external cooling loop.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "term": "QSFP",
+      "forms": ["QSFP"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Quad Small Form-factor Pluggable", "confidence": "confirmed" }
+      ],
+      "dependsOn": [],
+      "examples": ["BlueField-3 QSFP openings"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "left",
+          "detail": "Two network openings on the front of the BlueField-3 assembly in the left B bay.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-front-view"]
+    },
+    {
+      "term": "SD",
+      "forms": ["SD", "SD card"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Secure Digital", "confidence": "confirmed" }
+      ],
+      "dependsOn": [],
+      "examples": ["SD card slots (corrected lesson phrase)"],
+      "chassisLocations": [
+        {
+          "zone": "not-present",
+          "side": "not-applicable",
+          "detail": "No SD slot is identified in the studied front layout; the eight narrow front devices are E1.S SSD carriers.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-front-view", "dell-9712a-inside-system"]
+    },
+    {
+      "term": "SSD",
+      "forms": ["SSD", "SSDs"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Solid-State Drive", "confidence": "confirmed" }
+      ],
+      "dependsOn": ["E1.S", "M.2", "NVMe"],
+      "examples": ["E1.S SSD carrier", "M.2 SSD"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "center",
+          "detail": "Eight E1.S SSD carriers across the C bay.",
+          "confidence": "confirmed"
+        },
+        {
+          "zone": "rear",
+          "side": "right",
+          "detail": "One M.2 SSD on the riser plugged into the right Bianca board.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-system-features", "dell-9712a-m2", "snia-edsff"]
+    },
+    {
+      "term": "TPM",
+      "forms": ["TPM", "TPM module"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Trusted Platform Module", "confidence": "confirmed" }
+      ],
+      "dependsOn": [],
+      "examples": ["TPM module", "TPM bracket"],
+      "chassisLocations": [
+        {
+          "zone": "rear",
+          "side": "left",
+          "detail": "Small bracketed module in a Bianca-board slot in the lesson’s rear-left cluster; Dell confirms the Bianca connection but not the lesson’s side numbering.",
+          "confidence": "lesson-observation"
+        }
+      ],
+      "sourceIds": ["dell-9712a-tpm", "catalog-review-queue", "trusted-computing-group"]
+    },
+    {
+      "term": "Ultra-Pass",
+      "forms": ["Ultra-Pass", "UltraPass"],
+      "kind": "product-name",
+      "expansions": [
+        { "text": "cable and connector family name; no published acronym expansion in the cited Dell procedure", "confidence": "not-an-acronym" }
+      ],
+      "dependsOn": [],
+      "examples": ["Ultra-Pass cable", "Ultra-Pass socket", "Ultra-Pass holding bracket"],
+      "chassisLocations": [
+        {
+          "zone": "front-to-rear",
+          "side": "left",
+          "detail": "Runs from the left front bay through the channel between the fans and under cold-plate tubing to sockets on the left Bianca board.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-left-bay"]
+    },
+    {
+      "term": "USB",
+      "forms": ["USB", "Host USB"],
+      "kind": "acronym",
+      "expansions": [
+        { "text": "Universal Serial Bus", "confidence": "confirmed" }
+      ],
+      "dependsOn": [],
+      "examples": ["Host USB port"],
+      "chassisLocations": [
+        {
+          "zone": "front",
+          "side": "center-right",
+          "detail": "Port on the front panel I/O module beside the E1.S drive row.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-front-view", "usb-if"]
+    },
+    {
+      "term": "V",
+      "forms": ["V", "12 V"],
+      "kind": "unit",
+      "expansions": [
+        { "text": "volt", "confidence": "confirmed" },
+        { "text": "twelve volts", "appliesTo": "12 V", "confidence": "confirmed" }
+      ],
+      "dependsOn": [],
+      "examples": ["12 V inner busbar"],
+      "chassisLocations": [
+        {
+          "zone": "middle-to-rear",
+          "side": "left and right",
+          "detail": "The paired 12 V inner busbars and associated busbar power hardware run through the power-delivery area.",
+          "confidence": "confirmed"
+        }
+      ],
+      "sourceIds": ["dell-9712a-inside-system"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "dell-9712a-service-manual",
+      "title": "Dell Server 9712a/9712b Installation and Service Manual",
+      "url": "https://www.dell.com/support/manuals/en-us/dell-server-9712a/server_9712a_ism/Introduction?guid=guid-92f4ae28-dee6-4ba1-96c2-64326abb8d51&lang=en-us"
+    },
+    {
+      "id": "dell-9712a-inside-system",
+      "title": "Dell Server 9712a: Inside the system",
+      "url": "https://www.dell.com/support/manuals/en-us/dell-server-9712a/server_9712a/inside-the-system?guid=guid-db45dd2e-26b7-4c9b-84ee-90385df57b15&lang=en-us"
+    },
+    {
+      "id": "dell-9712a-front-view",
+      "title": "Dell Server 9712a: Front view",
+      "url": "https://www.dell.com/support/manuals/en-us/dell-server-9712a/server_9712a/system-configurations-front-view-for-9712a-system?guid=guid-740d5d2b-1251-4252-816c-d03bf1c1aa89&lang=en-us"
+    },
+    {
+      "id": "dell-9712a-left-bay",
+      "title": "Dell Server 9712a: Installing the left bay",
+      "url": "https://www.dell.com/support/manuals/en-us/dell-server-9712a/server_9712a_ism/installing-the-left-bay?guid=guid-82de6e0a-dadd-44bd-bba7-ee73f1ab9149&lang=en-us"
+    },
+    {
+      "id": "dell-9712a-ipex",
+      "title": "Dell Server 9712a: Installing the IPEX board",
+      "url": "https://www.dell.com/support/manuals/en-us/dell-server-9712a/server_9712a/installing-ipex-board?guid=guid-d86c9744-a544-4044-a91a-7baa5032847f&lang=en-us"
+    },
+    {
+      "id": "dell-9712a-psb",
+      "title": "Dell Server 9712a: Installing a PCIe (PSB)",
+      "url": "https://www.dell.com/support/manuals/en-us/dell-server-9712a/server_9712a/installing-a-pcie-psb?guid=guid-e91c696a-a1fb-4de3-965c-e4941b45a2ab&lang=en-us"
+    },
+    {
+      "id": "dell-9712a-hmc",
+      "title": "Dell Server 9712a: Installing HMC module to Bianca board",
+      "url": "https://www.dell.com/support/manuals/en-us/dell-server-9712a/server_9712a/installing-hmc-module-to-bianca-board?guid=guid-4ca13a85-ac4e-4e04-bf38-533d28533e5c&lang=en-us"
+    },
+    {
+      "id": "dell-9712a-m2",
+      "title": "Dell Server 9712a: Installing the M.2 card and SSD",
+      "url": "https://www.dell.com/support/manuals/en-us/dell-9712a-server/server_9712a/installing-the-m2-card-and-ssd?guid=guid-47e54520-cc11-4371-8e9b-2892190d5125&lang=en-us"
+    },
+    {
+      "id": "dell-9712a-tpm",
+      "title": "Dell Server 9712a: Installing TPM module to Bianca board",
+      "url": "https://www.dell.com/support/manuals/en-us/dell-server-9712a/server_9712a/installing-tpm-module-to-bianca-board?guid=guid-ccbfba51-716e-46d2-b8e8-cf2ea15c7178&lang=en-us"
+    },
+    {
+      "id": "dell-9712a-system-features",
+      "title": "Dell Server 9712a system configurations and features",
+      "url": "https://www.dell.com/support/manuals/en-us/dell-9712a-server/server_9712a/dell-server-9712a-system-configurations-and-features?guid=guid-4d91d530-cb31-4b14-9f39-0aa65b6f95f0&lang=en-us"
+    },
+    {
+      "id": "nvidia-dgx-gb-rack-guide",
+      "title": "NVIDIA DGX GB Rack Scale Systems User Guide",
+      "url": "https://docs.nvidia.com/dgx/dgxgb200-user-guide/dgxgb200-user-guide.pdf"
+    },
+    {
+      "id": "nvidia-mission-control-terms",
+      "title": "NVIDIA Mission Control terms and definitions",
+      "url": "https://docs.nvidia.com/pdf/sbom-2-3-0.pdf"
+    },
+    {
+      "id": "ipex-company-name",
+      "title": "I-PEX company-name explanation",
+      "url": "https://corp.i-pex.com/en/ir/faq"
+    },
+    {
+      "id": "snia-edsff",
+      "title": "SNIA SSD form factors and EDSFF",
+      "url": "https://www.snia.org/forums/cmsi/knowledge/formfactors"
+    },
+    {
+      "id": "nvmexpress",
+      "title": "NVM Express",
+      "url": "https://nvmexpress.org/"
+    },
+    {
+      "id": "osfp-msa",
+      "title": "OSFP Multi-Source Agreement specification",
+      "url": "https://osfpmsa.org/specification.html"
+    },
+    {
+      "id": "pci-sig",
+      "title": "PCI-SIG specifications",
+      "url": "https://pcisig.com/specifications"
+    },
+    {
+      "id": "trusted-computing-group",
+      "title": "Trusted Computing Group TPM resources",
+      "url": "https://trustedcomputinggroup.org/work-groups/trusted-platform-module/"
+    },
+    {
+      "id": "usb-if",
+      "title": "USB Implementers Forum",
+      "url": "https://www.usb.org/"
+    },
+    {
+      "id": "catalog-review-queue",
+      "title": "Catalog claims awaiting source or technician verification",
+      "access": "project-context"
+    }
+  ]
+}

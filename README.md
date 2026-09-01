@@ -8,7 +8,7 @@ Server Repair Visualizer is a browser-based study tool for repair technicians wh
 - what blocks it from view or removal; and
 - which parts must be removed first during a service sequence.
 
-The first target is the **Dell Server 9712a**, a liquid-cooled 1U compute sled used in Dell's GB200-era rack-scale AI system. The identification is supported by the supplied Dell configuration export and Dell's own service documentation. See [Dell 9712a research](docs/research/DELL_9712A.md) and the entry-level [physical component walk-through](docs/research/DELL_9712A_COMPONENT_WALKTHROUGH.md).
+The first target is the **Dell Server 9712a**, a liquid-cooled 1U compute sled used in Dell's GB200-era rack-scale AI system. The identification is supported by the supplied Dell configuration export and Dell's own service documentation. See [Dell 9712a research](docs/research/DELL_9712A.md), the entry-level [physical component walk-through](docs/research/DELL_9712A_COMPONENT_WALKTHROUGH.md), and its [acronym and designator map](docs/research/ACRONYM_MAP.md). A matching [JSON acronym map](docs/research/ACRONYM_MAP.json) includes expansion confidence, nested dependencies, examples, and chassis locations for future use in the GitHub Pages interface.
 
 ## Product direction
 
