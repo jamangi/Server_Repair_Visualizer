@@ -1,7 +1,7 @@
 # TASK-001 — Establish the content source ledger
 
 - **Recommended reasoning effort:** low
-- **Status:** Ready
+- **Status:** Completed on 2026-09-01
 - **Depends on:** None
 - **Primary output:** `docs/research/SOURCE_LEDGER.md`
 

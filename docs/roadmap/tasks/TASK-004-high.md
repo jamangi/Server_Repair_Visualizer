@@ -1,7 +1,7 @@
 # TASK-004 — Implement schemas and build-time validation
 
 - **Recommended reasoning effort:** high
-- **Status:** Ready after TASK-002
+- **Status:** Completed on 2026-09-01
 - **Depends on:** TASK-002
 - **Primary outputs:** typed data contracts and failing-fast content validation
 

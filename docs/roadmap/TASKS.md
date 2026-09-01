@@ -17,11 +17,11 @@ These labels are recommendations, not model pins. Current OpenAI model guidance 
 
 ## Phase 1 — Foundation
 
-- [ ] [TASK-001-low — Establish the content source ledger](tasks/TASK-001-low.md)
-- [ ] [TASK-002-medium — Scaffold the GitHub Pages application](tasks/TASK-002-medium.md)
-- [ ] [TASK-003-high — Build the visual system and study workspace](tasks/TASK-003-high.md)
-- [ ] [TASK-004-high — Implement schemas and build-time validation](tasks/TASK-004-high.md)
-- [ ] [TASK-005-high — Build the Dell 9712a component catalog](tasks/TASK-005-high.md)
+- [x] [TASK-001-low — Establish the content source ledger](tasks/TASK-001-low.md)
+- [x] [TASK-002-medium — Scaffold the GitHub Pages application](tasks/TASK-002-medium.md)
+- [x] [TASK-003-high — Build the visual system and study workspace](tasks/TASK-003-high.md)
+- [x] [TASK-004-high — Implement schemas and build-time validation](tasks/TASK-004-high.md)
+- [x] [TASK-005-high — Build the Dell 9712a component catalog](tasks/TASK-005-high.md)
 
 ## Phase 2 — Approved realistic image
 

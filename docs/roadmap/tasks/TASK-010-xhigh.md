@@ -1,5 +1,7 @@
 # TASK-010 — Trace buried geometry and add annotation diagnostics
 
+Source and claim authority for geometry review: [`docs/research/SOURCE_LEDGER.md`](../../research/SOURCE_LEDGER.md).
+
 - **Recommended reasoning effort:** xhigh
 - **Status:** Ready after TASK-009
 - **Depends on:** TASK-009, TASK-005, TASK-004

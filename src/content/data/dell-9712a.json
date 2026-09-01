@@ -1,0 +1,570 @@
+{
+  "sources": [
+    {
+      "id": "dell-9712a-support",
+      "title": "Dell Server 9712a support and manuals",
+      "kind": "official",
+      "url": "https://www.dell.com/support/product-details/en-us/product/dell-server-9712a/resources/manuals",
+      "scope": "Dell's public support landing page for the 9712a model.",
+      "facts": ["Model identity", "Available public manuals"],
+      "access": "public"
+    },
+    {
+      "id": "dell-9712a-service-manual",
+      "title": "Dell Server 9712a and 9712b Installation and Service Manual",
+      "kind": "official",
+      "url": "https://www.dell.com/support/manuals/en-us/dell-server-9712a/server_9712a_ism/Introduction?guid=guid-92f4ae28-dee6-4ba1-96c2-64326abb8d51&lang=en-us",
+      "scope": "Dell's canonical service vocabulary and service procedures.",
+      "facts": ["Canonical component names", "Service procedure reference"],
+      "access": "public"
+    },
+    {
+      "id": "dell-9712a-inside-system",
+      "title": "Dell manual: Inside the system",
+      "kind": "official",
+      "url": "https://www.dell.com/support/manuals/en-us/dell-server-9712a/server_9712a/inside-the-system?guid=guid-db45dd2e-26b7-4c9b-84ee-90385df57b15&lang=en-us",
+      "scope": "Official open-system inventory and overall relative layout.",
+      "facts": ["Overview-scene assembly inventory", "Official quantities where enumerated", "Relative left, center, and right layout"],
+      "access": "public"
+    },
+    {
+      "id": "dell-xe9712-announcement",
+      "title": "Dell announcement referencing PowerEdge XE9712 with NVIDIA GB200 NVL72",
+      "kind": "official",
+      "url": "https://www.dell.com/en-au/dt/corporate/newsroom/announcements/detailpage.press-releases~usa~2024~12~dell-cw-customer-announce.htm",
+      "scope": "Rack-scale product context, not component service detail.",
+      "facts": ["PowerEdge XE9712 and NVIDIA GB200 NVL72 context"],
+      "access": "public"
+    },
+    {
+      "id": "private-configuration-export",
+      "title": "Supplied Dell configuration export",
+      "kind": "private-configuration",
+      "scope": "Private evidence used only to establish the studied sled's configured assemblies and quantities; the export and identifiers are not committed.",
+      "facts": ["9712a configuration identity", "Configured E1.S, networking, control, power, and cooling assemblies"],
+      "access": "private-not-committed"
+    },
+    {
+      "id": "catalog-review-queue",
+      "title": "Catalog claims awaiting source or technician verification",
+      "kind": "inference",
+      "scope": "Explicitly provisional relationship records retained as a review queue, never as confirmed service guidance.",
+      "facts": ["Candidate port labels", "Candidate cable endpoints", "Candidate removal blockers"],
+      "access": "project-record"
+    }
+  ],
+  "models": [
+    {
+      "id": "dell-server-9712a",
+      "name": "Dell Server 9712a",
+      "context": "PowerEdge XE9712 / NVIDIA GB200 NVL72",
+      "status": "draft",
+      "sourceIds": ["dell-9712a-support", "dell-xe9712-announcement", "private-configuration-export"]
+    }
+  ],
+  "components": [
+    {
+      "id": "mgx-1ru-chassis-assembly",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "MGX 1RU chassis assembly",
+      "plainName": "Main chassis",
+      "aliases": ["MGX chassis"],
+      "category": "assembly",
+      "quantity": 1,
+      "description": "The main 1RU sled chassis assembly shown in the open-system inventory.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "left-b-bay",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Left B bay",
+      "plainName": "Left network bay",
+      "aliases": ["Left B bay assembly"],
+      "category": "bay",
+      "quantity": 1,
+      "side": "left",
+      "description": "The left B bay position in Dell's open-system layout.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "c-bay",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "C bay",
+      "plainName": "Front storage and I/O bay",
+      "aliases": ["C bay assembly"],
+      "category": "bay",
+      "quantity": 1,
+      "side": "center",
+      "description": "The bay containing the E1.S storage and front I/O assemblies.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "right-b-bay",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Right B bay",
+      "plainName": "Right network and power bay",
+      "aliases": ["Right B bay assembly"],
+      "category": "bay",
+      "quantity": 1,
+      "side": "right",
+      "description": "The right B bay position in Dell's open-system layout.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "e1s-drive-carrier",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "E1.S drive and carrier",
+      "plainName": "E1.S NVMe drive",
+      "aliases": ["SSD", "E1.S drive"],
+      "category": "storage",
+      "quantity": 8,
+      "description": "The configured E1.S NVMe storage devices and their carriers.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-service-manual", "private-configuration-export"]
+    },
+    {
+      "id": "e1s-backplane",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "E1.S backplane",
+      "plainName": "Drive backplane",
+      "aliases": ["E1.S BP"],
+      "category": "backplane",
+      "description": "The backplane assembly serving the E1.S drive positions; positional numbering remains unassigned.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-service-manual", "private-configuration-export"]
+    },
+    {
+      "id": "front-panel-io-module",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Front panel I/O module",
+      "plainName": "Front control panel",
+      "aliases": ["Front I/O"],
+      "category": "io-board",
+      "description": "The external-facing front I/O assembly in the C bay.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system", "dell-9712a-service-manual"]
+    },
+    {
+      "id": "control-panel-board",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Control panel board",
+      "plainName": "Internal control panel",
+      "aliases": ["Control panel"],
+      "category": "io-board",
+      "description": "The internal control-panel board kept distinct from the external front I/O module.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-service-manual", "private-configuration-export"]
+    },
+    {
+      "id": "psb",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "PSB",
+      "plainName": "PSB assembly",
+      "aliases": ["9712a PSB enclosure"],
+      "category": "power-board",
+      "description": "Dell's PSB assembly; the acronym is intentionally not expanded without a validated source.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system", "private-configuration-export"]
+    },
+    {
+      "id": "osfp-card",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "OSFP card",
+      "plainName": "Network port card",
+      "aliases": ["OSFP"],
+      "category": "network-board",
+      "description": "The OSFP card assembly, kept distinct from any optical cable attached to it.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system", "private-configuration-export"]
+    },
+    {
+      "id": "nvidia-bluefield-3-dpu",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "NVIDIA BlueField-3 DPU",
+      "plainName": "BlueField-3 card",
+      "aliases": ["BF3", "BlueField 3"],
+      "category": "network-board",
+      "description": "The BlueField-3 network/DPU assembly listed for the B bay configuration.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system", "private-configuration-export"]
+    },
+    {
+      "id": "one-gb-nic-board",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "1 Gb NIC board",
+      "plainName": "NIC card",
+      "aliases": ["1 Gb NIC"],
+      "category": "network-board",
+      "description": "The 1 Gb network interface board named in the configured assembly evidence.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-service-manual", "private-configuration-export"]
+    },
+    {
+      "id": "pdb",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "PDB",
+      "plainName": "Power distribution board",
+      "aliases": ["PDB board"],
+      "category": "power-board",
+      "quantity": 1,
+      "description": "The power distribution board identified in the open-system inventory.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "pdb-tray",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "PDB tray",
+      "plainName": "Power board tray",
+      "aliases": [],
+      "category": "assembly",
+      "quantity": 1,
+      "description": "The tray associated with the PDB in Dell's inventory.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "bmc-board",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "BMC board",
+      "plainName": "Baseboard management controller board",
+      "aliases": ["BMC"],
+      "category": "control-board",
+      "quantity": 1,
+      "description": "The system management board identified in the rear assembly inventory.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "ipex-board",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "IPEX board",
+      "plainName": "IPEX board",
+      "aliases": ["IPEX"],
+      "category": "io-board",
+      "description": "Dell's IPEX board name is preserved without inventing an acronym expansion.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-service-manual", "private-configuration-export"]
+    },
+    {
+      "id": "interposer-board",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Interposer board",
+      "plainName": "Interposer",
+      "aliases": [],
+      "category": "io-board",
+      "description": "A separately named interposer assembly; it must not be merged with IPEX without source proof.",
+      "partNumbers": [],
+      "validation": "needs-review",
+      "sourceIds": ["private-configuration-export", "catalog-review-queue"]
+    },
+    {
+      "id": "fan-module",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "40 x 56 mm fan module",
+      "plainName": "Fan module",
+      "aliases": ["Cooling fan"],
+      "category": "cooling",
+      "quantity": 8,
+      "description": "The eight fan modules enumerated by Dell for the open-system layout.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "fan-cover",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Fan cover",
+      "plainName": "Fan-bank cover",
+      "aliases": [],
+      "category": "assembly",
+      "quantity": 1,
+      "description": "The cover over the fan modules in Dell's inventory.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "internal-manifold",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Internal manifold",
+      "plainName": "Liquid-cooling manifold",
+      "aliases": ["Manifold"],
+      "category": "cooling",
+      "quantity": 2,
+      "description": "The left and right internal cooling manifolds; inlet/outlet roles and color are not assigned here.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "floating-quick-disconnect",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Floating quick disconnect",
+      "plainName": "Coolant quick disconnect",
+      "aliases": ["FQD"],
+      "category": "cooling",
+      "description": "The floating quick-disconnect hardware named in the cooling inventory.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "cold-plate",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Cold plate",
+      "plainName": "Processor cold plate",
+      "aliases": ["Cooling plate"],
+      "category": "cooling",
+      "quantity": 2,
+      "description": "Two cold-plate assemblies associated with the two Bianca boards.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "inner-busbar",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "12 V inner busbar",
+      "plainName": "Inner busbar",
+      "aliases": ["12 V busbar"],
+      "category": "power-delivery",
+      "quantity": 2,
+      "description": "The left and right 12 V inner busbar assemblies.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "busbar-partition",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Busbar partition",
+      "plainName": "Busbar divider",
+      "aliases": [],
+      "category": "bracket",
+      "description": "The partition identified with the inner busbar assemblies.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "busbar-cable",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Busbar cable",
+      "plainName": "Busbar power cable",
+      "aliases": [],
+      "category": "cable",
+      "description": "The separately serviceable busbar cable named in Dell's inventory.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "busbar-bridge-bracket",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Busbar bridge bracket",
+      "plainName": "Busbar bridge",
+      "aliases": [],
+      "category": "bracket",
+      "description": "The bridge bracket associated with the busbar cable.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "bianca-board",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Bianca board",
+      "plainName": "Motherboard",
+      "aliases": ["Bianca"],
+      "category": "compute-board",
+      "quantity": 2,
+      "description": "The two main compute boards in the sled.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "hmc-module",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "HMC module",
+      "plainName": "HMC card",
+      "aliases": ["HMC"],
+      "category": "control-board",
+      "quantity": 1,
+      "description": "The HMC module listed with the Bianca board assemblies; its acronym is not expanded here.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system", "private-configuration-export"]
+    },
+    {
+      "id": "m2-riser-card",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "M.2 riser card",
+      "plainName": "M.2 riser",
+      "aliases": ["M.2"],
+      "category": "storage",
+      "quantity": 1,
+      "description": "The M.2 riser card listed in the compute-board inventory.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "tpm-module",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "TPM module",
+      "plainName": "Trusted platform module",
+      "aliases": ["TPM"],
+      "category": "security",
+      "quantity": 1,
+      "description": "The TPM module listed with the Bianca board assemblies.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "rear-wall-bracket",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Rear-wall bracket",
+      "plainName": "Rear bracket",
+      "aliases": [],
+      "category": "bracket",
+      "description": "The rear-wall bracket listed with the compute-board assemblies.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "top-cover",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "Top cover",
+      "plainName": "Chassis lid",
+      "aliases": [],
+      "category": "assembly",
+      "quantity": 1,
+      "description": "The removable top cover; shown removed in the planned overview scene.",
+      "partNumbers": [],
+      "validation": "official",
+      "sourceIds": ["dell-9712a-inside-system"]
+    },
+    {
+      "id": "hmc-cable",
+      "modelId": "dell-server-9712a",
+      "canonicalName": "HMC cable",
+      "plainName": "HMC cable",
+      "aliases": [],
+      "category": "cable",
+      "description": "A provisional cable record retained for endpoint review.",
+      "partNumbers": [],
+      "validation": "needs-review",
+      "sourceIds": ["private-configuration-export", "catalog-review-queue"]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "top-open-fixture",
+      "modelId": "dell-server-9712a",
+      "label": "Top cover removed — layout fixture",
+      "image": "fixture://neutral-chassis",
+      "width": 1600,
+      "height": 900,
+      "maxDepth": 2,
+      "sourceIds": ["dell-9712a-inside-system"]
+    }
+  ],
+  "regions": [],
+  "ports": [
+    {
+      "id": "hmc-cable-port",
+      "componentId": "hmc-module",
+      "label": "HMC cable port",
+      "kind": "data",
+      "validation": "needs-review",
+      "sourceIds": ["catalog-review-queue"]
+    },
+    {
+      "id": "interposer-hmc-input",
+      "componentId": "interposer-board",
+      "label": "HMC input",
+      "kind": "data",
+      "validation": "needs-review",
+      "sourceIds": ["catalog-review-queue"]
+    },
+    {
+      "id": "e1s-drive-connector",
+      "componentId": "e1s-drive-carrier",
+      "label": "Drive connector",
+      "kind": "data",
+      "validation": "needs-review",
+      "sourceIds": ["catalog-review-queue"]
+    },
+    {
+      "id": "e1s-backplane-drive-slot",
+      "componentId": "e1s-backplane",
+      "label": "Drive slot connector",
+      "kind": "data",
+      "validation": "needs-review",
+      "sourceIds": ["catalog-review-queue"]
+    }
+  ],
+  "connections": [
+    {
+      "id": "hmc-to-interposer",
+      "from": { "componentId": "hmc-module", "portId": "hmc-cable-port" },
+      "to": { "componentId": "interposer-board", "portId": "interposer-hmc-input" },
+      "cableComponentId": "hmc-cable",
+      "signalDirection": "unknown",
+      "validation": "needs-review",
+      "sourceIds": ["catalog-review-queue"]
+    },
+    {
+      "id": "e1s-drive-to-backplane",
+      "from": { "componentId": "e1s-drive-carrier", "portId": "e1s-drive-connector" },
+      "to": { "componentId": "e1s-backplane", "portId": "e1s-backplane-drive-slot" },
+      "signalDirection": "bidirectional",
+      "validation": "needs-review",
+      "sourceIds": ["dell-9712a-service-manual", "catalog-review-queue"]
+    }
+  ],
+  "serviceDependencies": [
+    {
+      "id": "hmc-requires-rear-wall-bracket-review",
+      "blockedComponentId": "hmc-module",
+      "blockerComponentId": "rear-wall-bracket",
+      "action": "remove",
+      "note": "Candidate prerequisite retained from the architecture example; confirm against the exact Dell removal procedure before instruction use.",
+      "validation": "needs-review",
+      "sourceIds": ["dell-9712a-service-manual", "catalog-review-queue"]
+    },
+    {
+      "id": "pdb-requires-pdb-tray-review",
+      "blockedComponentId": "pdb",
+      "blockerComponentId": "pdb-tray",
+      "action": "remove",
+      "note": "The inventory establishes both assemblies, but their precise removal order still requires procedure-level review.",
+      "validation": "needs-review",
+      "sourceIds": ["dell-9712a-inside-system", "catalog-review-queue"]
+    }
+  ]
+}

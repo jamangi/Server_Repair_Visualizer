@@ -1,5 +1,7 @@
 # Target model: Dell Server 9712a
 
+The project's permitted evidence, citation IDs, precedence rules, and private-source handling are maintained in the [Dell Server 9712a source ledger](SOURCE_LEDGER.md).
+
 ## Conclusion
 
 The server is a **Dell Server 9712a**. Confidence is high enough to use this as the first model identifier in the visualizer.
@@ -80,6 +82,8 @@ The app should preserve both official and training-floor names:
 Names that are ambiguous in a lesson should not be invented silently. The data model supports an official label, a plain-language label, aliases, and a validation status.
 
 ## Sources
+
+The auditable source scopes and stable IDs are defined in the [source ledger](SOURCE_LEDGER.md). Starting links are repeated here for convenience.
 
 - [Dell Server 9712a support and manuals](https://www.dell.com/support/product-details/en-us/product/dell-server-9712a/resources/manuals)
 - [Dell Server 9712a/9712b Installation and Service Manual](https://www.dell.com/support/manuals/en-us/dell-server-9712a/server_9712a_ism/Introduction?guid=guid-92f4ae28-dee6-4ba1-96c2-64326abb8d51&lang=en-us)

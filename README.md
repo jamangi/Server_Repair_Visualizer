@@ -38,9 +38,23 @@ All three initial product gates are approved. The first scene will use an origin
 - Component depth, connection graph, and removal dependency concepts separated.
 - Original realistic illustration selected for the first public scene.
 - Naming policy and first-release scope approved.
-- Implementation plan split into self-contained task packets.
+- Phase 1 foundation complete: Vite, React, and TypeScript static application scaffolded.
+- Responsive, keyboard-accessible study workspace implemented with an explicitly neutral layout fixture.
+- Auditable source ledger and initial 33-component Dell 9712a catalog added.
+- Runtime schemas, cross-record validation, dependency-cycle detection, and automated tests added.
 
 No service tag or device-specific configuration export is committed to this public-facing repository.
+
+## Local development
+
+The repository uses `pnpm` and requires a current Node.js release.
+
+```text
+pnpm install
+pnpm dev
+```
+
+Use `pnpm test` for the content-validation tests, `pnpm typecheck` for TypeScript checks, and `pnpm build` for the production build. Every production build runs `pnpm validate:data` first, so invalid lesson content cannot be silently deployed. Vite's production base is `/Server_Repair_Visualizer/` for GitHub Pages hosting beneath the repository path.
 
 ## Source starting points
 

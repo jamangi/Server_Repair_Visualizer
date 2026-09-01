@@ -1,8 +1,9 @@
 # TASK-005 — Build the Dell 9712a component catalog
 
 - **Recommended reasoning effort:** high
-- **Status:** Ready after TASK-001 and TASK-004
+- **Status:** Completed on 2026-09-01
 - **Depends on:** TASK-001, TASK-004
+- **Source authority:** [`docs/research/SOURCE_LEDGER.md`](../../research/SOURCE_LEDGER.md)
 - **Primary output:** validated Dell 9712a component and relationship data
 
 ## Outcome

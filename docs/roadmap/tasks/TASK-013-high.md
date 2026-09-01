@@ -1,5 +1,7 @@
 # TASK-013 — Implement details, connections, and service dependencies
 
+Source and claim authority for relationship data: [`docs/research/SOURCE_LEDGER.md`](../../research/SOURCE_LEDGER.md).
+
 - **Recommended reasoning effort:** high
 - **Status:** Ready after TASK-005, TASK-011, and TASK-004
 - **Depends on:** TASK-005, TASK-011, TASK-004

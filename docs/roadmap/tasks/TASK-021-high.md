@@ -1,5 +1,7 @@
 # TASK-021 — Conduct technician accuracy review and corrections
 
+Record technician evidence and claim status under the protocol in [`docs/research/SOURCE_LEDGER.md`](../../research/SOURCE_LEDGER.md).
+
 - **Recommended reasoning effort:** high
 - **Status:** Ready after the first complete scene and relationships exist
 - **Depends on:** TASK-007, TASK-010, TASK-013, TASK-015

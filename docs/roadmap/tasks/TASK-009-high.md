@@ -1,5 +1,7 @@
 # TASK-009 — Trace surface component geometry
 
+Source and claim authority for geometry review: [`docs/research/SOURCE_LEDGER.md`](../../research/SOURCE_LEDGER.md).
+
 - **Recommended reasoning effort:** high
 - **Status:** Ready after TASK-005 and TASK-008
 - **Depends on:** TASK-005, TASK-008, TASK-004
