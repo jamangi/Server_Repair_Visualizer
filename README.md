@@ -18,6 +18,16 @@ Users will be able to hover, focus, or tap a visible component to highlight its 
 
 SVG regions are the recommended runtime approach. A grid may still be useful as an authoring or debugging aid, but it is too coarse to be the main learner-facing interaction model. The reasoning is recorded in [Interaction model](docs/architecture/INTERACTION_MODEL.md).
 
+## Public study site
+
+The [GitHub Pages visualizer](https://jamangi.github.io/Server_Repair_Visualizer/) is one static application with model-level navigation. Dell Server 9712a currently contains three study views:
+
+- **Visualizer** trains appearance → component name. It currently uses a clearly labeled neutral fixture while the approved realistic 9712a image and geometry are produced in Tasks 6–13.
+- **Location essay** trains component name → chassis location by turning the research walk-through into a readable study view.
+- **Acronyms & labels** trains shorthand → meaning and location from the structured acronym JSON, including confidence labels and search filters.
+
+The two text references include a **Print low-ink view** action. Printing removes navigation and dark backgrounds, uses black text on white paper, and tightens spacing for economical black-and-white output. Each tab has a stable hash link within the one-page app.
+
 ## Repository map
 
 | Path | Purpose |
@@ -27,6 +37,7 @@ SVG regions are the recommended runtime approach. A grid may still be useful as 
 | [`docs/decisions/`](docs/decisions/) | User approval gates and settled defaults |
 | [`docs/roadmap/`](docs/roadmap/) | Ordered, testable tasks from prototype through GitHub Pages release |
 | [`docs/roadmap/tasks/`](docs/roadmap/tasks/) | Self-contained task packets with recommended reasoning effort in each filename |
+| [`docs/roadmap/detours/`](docs/roadmap/detours/) | Completed out-of-sequence work that preserves the numbered task history |
 
 All three initial product gates are approved. The first scene will use an original, realistic generated technical illustration, validated against Dell documentation and technician knowledge before geometry is finalized. Implementation is organized as [self-contained task packets](docs/roadmap/TASKS.md), so a task owner can work from one packet without reading the full project history.
 
@@ -42,6 +53,8 @@ All three initial product gates are approved. The first scene will use an origin
 - Responsive, keyboard-accessible study workspace implemented with an explicitly neutral layout fixture.
 - Auditable source ledger and initial 33-component Dell 9712a catalog added.
 - Runtime schemas, cross-record validation, dependency-cycle detection, and automated tests added.
+- Tabbed Dell 9712a study shell added with the research essay, searchable acronym reference, and low-ink printing.
+- Initial GitHub Pages deployment workflow added; final release hardening remains in TASK-019.
 
 No service tag or device-specific configuration export is committed to this public-facing repository.
 

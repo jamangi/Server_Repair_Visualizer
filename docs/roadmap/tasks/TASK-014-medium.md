@@ -13,6 +13,8 @@ Provide three usable learning modes: free exploration, locating a named componen
 
 The first release must be immediately usable without an account. Questions should draw only from components available in the current scene and active visual depth.
 
+DETOUR-001 established the surrounding study structure. Preserve its distinct cognitive directions: the Location essay trains **component name → chassis location**, while the Visualizer and its Name mode train **visual appearance → component name**. This task turns the existing mode controls into complete scored learning loops; it does not replace the reference tabs.
+
 ## Work
 
 1. Study mode shows labels and details during exploration.

@@ -1,13 +1,15 @@
 # TASK-019 — Configure GitHub Pages deployment
 
 - **Recommended reasoning effort:** medium
-- **Status:** Ready after the production build is stable
+- **Status:** Partially complete; initial deployment established by DETOUR-001, final-release hardening pending
 - **Depends on:** TASK-002, TASK-018, TASK-021
 - **Primary outputs:** GitHub Actions Pages workflow and deployment documentation
 
 ## Outcome
 
 Build and deploy the validated static application from `main` to the repository's GitHub Pages URL.
+
+DETOUR-001 added the first official Pages workflow so the essay and acronym references could be published before the image and interaction sequence. Retain that pipeline. Complete this task after TASK-018 and TASK-021 by hardening and re-verifying the final visualizer rather than creating a second deployment path.
 
 ## Context
 

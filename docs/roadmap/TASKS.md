@@ -4,6 +4,8 @@ The initial decisions are complete: the first model is the Dell Server 9712a, th
 
 Each remaining task is a self-contained packet under [`tasks/`](tasks/). A task owner should be able to execute one packet without reading preceding task packets. Dependencies identify required artifacts rather than assumed conversational history.
 
+Completed, out-of-sequence work is recorded under [`detours/`](detours/) so the numbered task history remains stable. A detour may satisfy an immediate need while leaving a later task responsible for final-release hardening.
+
 ## Effort labels
 
 Filenames use the recommended reasoning effort for the task:
@@ -28,6 +30,10 @@ These labels are recommendations, not model pins. Current OpenAI model guidance 
 - [ ] [TASK-006-high — Generate the realistic top-open illustration](tasks/TASK-006-high.md)
 - [ ] [TASK-007-xhigh — Validate and revise the generated illustration](tasks/TASK-007-xhigh.md)
 - [ ] [TASK-008-medium — Prepare the approved production image asset](tasks/TASK-008-medium.md)
+
+## Completed detours
+
+- [x] [DETOUR-001-high — Publish the tabbed study shell](detours/DETOUR-001-high-publish-tabbed-study-shell.md) — exposes the Visualizer (appearance → name), Location essay (name → chassis location), and Acronyms & labels views; establishes the initial Pages pipeline.
 
 ## Phase 3 — Spatial interaction
 
