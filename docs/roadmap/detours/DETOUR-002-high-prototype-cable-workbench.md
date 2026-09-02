@@ -33,6 +33,17 @@ Add a **Workbench** view to the Dell Server 9712a model. Its first scratch tool 
 5. Added an explicit route bridge and route halos to prevent ambiguous crossings.
 6. Added a documented architecture and Tasks 25–29 for evidence completion and procedural learning.
 
+## Layout correction — 2026-09-02
+
+The initial prototype placed the PDB/BMC/interposer group rearward of the fan wall and put the 12 V busbar on the right. A technician-provided annotated top view and Dell's left-bay installation view showed the studied configuration more clearly. The authored layout now follows this rear-to-front order:
+
+1. two Bianca boards with the 12 V inner busbar on their shared centerline;
+2. the transverse eight-fan wall immediately forward of the Bianca boards;
+3. the PDB, BMC, interposer, and cable-management zone in front of the fans; and
+4. the three front service bays.
+
+Cable paths were rerouted through reserved fan-module gaps, and the essay and acronym locations were corrected at the same time so the two study modes do not teach conflicting spatial memories.
+
 ## Acceptance criteria
 
 - [x] Rear components appear above front components.

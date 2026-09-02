@@ -40,4 +40,23 @@ describe('cable diagram data', () => {
       expect(Number.isFinite(route.bridge?.y)).toBe(true)
     }
   })
+
+  it('preserves the studied rear-to-front chassis order', () => {
+    const node = (id: string) => cableNodes.find((item) => item.id === id)!
+    const leftBianca = node('bianca-left')
+    const rightBianca = node('bianca-right')
+    const busbar = node('busbar')
+    const fanBank = node('fan-bank')
+    const frontBay = node('bf3')
+
+    expect(busbar.x).toBeGreaterThanOrEqual(leftBianca.x + leftBianca.width)
+    expect(busbar.x + busbar.width).toBeLessThanOrEqual(rightBianca.x)
+    expect(fanBank.y).toBeGreaterThanOrEqual(leftBianca.y + leftBianca.height)
+
+    for (const id of ['bmc', 'pdb', 'interposer']) {
+      const controlNode = node(id)
+      expect(controlNode.y).toBeGreaterThanOrEqual(fanBank.y + fanBank.height)
+      expect(controlNode.y + controlNode.height).toBeLessThanOrEqual(frontBay.y)
+    }
+  })
 })

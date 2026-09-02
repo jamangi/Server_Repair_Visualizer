@@ -126,7 +126,7 @@
         {
           "zone": "middle",
           "side": "left-center",
-          "detail": "BMC board in the compact PDB/BMC tray just behind or beside the fan bank.",
+          "detail": "BMC board in the compact PDB/BMC tray immediately in front of the fan bank toward the front bays.",
           "confidence": "confirmed"
         },
         {
@@ -549,7 +549,7 @@
         {
           "zone": "middle",
           "side": "left-center",
-          "detail": "Compact PDB/PDB-tray assembly just behind or beside the fan bank, adjacent to the BMC board.",
+          "detail": "Compact PDB/PDB-tray assembly immediately in front of the fan bank toward the front bays, adjacent to the BMC board.",
           "confidence": "confirmed"
         }
       ],
@@ -728,8 +728,8 @@
       "chassisLocations": [
         {
           "zone": "middle-to-rear",
-          "side": "left and right",
-          "detail": "The paired 12 V inner busbars and associated busbar power hardware run through the power-delivery area.",
+          "side": "centerline",
+          "detail": "The paired 12 V inner busbars occupy the corridor between the two rear Bianca boards; associated power cabling continues toward the front-right PSB.",
           "confidence": "confirmed"
         }
       ],

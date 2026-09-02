@@ -132,18 +132,19 @@ export function CableDiagram() {
         <div className="cable-canvas panel">
           <svg viewBox="0 0 1000 1430" role="img" aria-labelledby="cable-map-title cable-map-description">
             <title id="cable-map-title">Dell Server 9712a draft cable and connector diagram</title>
-            <desc id="cable-map-description">A portrait schematic organized like the chassis, with rear compute boards at the top, the fan wall in the middle, and front bays at the bottom. Select a node or line for details.</desc>
+            <desc id="cable-map-description">A portrait schematic organized like the studied chassis: rear Bianca boards and a central busbar at the top, the fan wall immediately forward, the PDB, BMC, and interposer ahead of the fans, and front bays at the bottom. Select a node or line for details.</desc>
             <rect className="chassis-outline" x="8" y="65" width="984" height="1280" rx="28" />
             <g className="zone-labels" aria-hidden="true">
               <text x="35" y="92">REAR / COMPUTE</text>
-              <text x="35" y="480">CABLE MANAGEMENT</text>
-              <text x="35" y="720">FAN WALL</text>
+              <text x="35" y="495">FAN WALL</text>
+              <text x="35" y="645">POWER / MANAGEMENT</text>
               <text x="35" y="895">FRONT BAYS</text>
               <text x="500" y="1418" textAnchor="middle">FRONT / SERVICE AISLE</text>
             </g>
             <g className="routing-lanes" aria-hidden="true">
-              <path d="M255 460 V905" />
-              <path d="M610 460 V905" />
+              <path d="M288 460 V905" />
+              <path d="M700 460 V905" />
+              <path d="M920 460 V905" />
             </g>
 
             {cableNodes.map((node) => (

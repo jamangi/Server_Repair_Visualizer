@@ -14,9 +14,9 @@ The workbench is not yet an installation procedure. It shows connection knowledg
 
 A general force-directed graph optimizes edge length and separation without understanding a server chassis. It can place a rear motherboard beside a front-panel board or route a cable through an unrelated card. The 9712a map instead uses a portrait chassis coordinate system:
 
-1. rear compute boards occupy the highest band;
-2. power, management, and cable-handling parts occupy the middle band;
-3. the fan bank forms a transverse wall with reserved routing gaps; and
+1. rear compute boards occupy the highest band, with the inner busbar centered between them;
+2. the fan bank forms a transverse wall immediately forward of the compute boards, with reserved routing gaps;
+3. the PDB, BMC, interposer, and cable-handling parts occupy the band in front of the fans; and
 4. the three front bays occupy the lowest internal band.
 
 Each node receives an authored rectangle in normalized SVG coordinates. Its area loosely represents physical service footprint, while its position preserves front/back and left/right memory. This is a schematic, not a dimensional drawing.
