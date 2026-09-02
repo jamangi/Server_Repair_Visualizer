@@ -20,11 +20,12 @@ SVG regions are the recommended runtime approach. A grid may still be useful as 
 
 ## Public study site
 
-The [GitHub Pages visualizer](https://jamangi.github.io/Server_Repair_Visualizer/) is one static application with model-level navigation. Dell Server 9712a currently contains three study views:
+The [GitHub Pages visualizer](https://jamangi.github.io/Server_Repair_Visualizer/) is one static application with model-level navigation. Dell Server 9712a currently contains four study views:
 
 - **Visualizer** trains appearance → component name. It currently uses a clearly labeled neutral fixture while the approved realistic 9712a image and geometry are produced in Tasks 6–13.
 - **Location essay** trains component name → chassis location by turning the research walk-through into a readable study view.
 - **Acronyms & labels** trains shorthand → meaning and location from the structured acronym JSON, including confidence labels and search filters.
+- **Workbench** trains connection → route and endpoint. Its first scratch tool is a portrait cable diagram arranged like the chassis, with relative component footprints, selectable routes, category filters, evidence states, and explicit cable bridges at crossings.
 
 The two text references include a **Print low-ink view** action. Printing removes navigation and dark backgrounds, uses black text on white paper, and tightens spacing for economical black-and-white output. Each tab has a stable hash link within the one-page app.
 
@@ -55,6 +56,7 @@ All three initial product gates are approved. The first scene will use an origin
 - Runtime schemas, cross-record validation, dependency-cycle detection, and automated tests added.
 - Tabbed Dell 9712a study shell added with the research essay, searchable acronym reference, and low-ink printing.
 - Initial GitHub Pages deployment workflow added; final release hardening remains in TASK-019.
+- Experimental cable workbench added with a deterministic chassis layout; its partial endpoint inventory is not yet an assembly procedure.
 
 No service tag or device-specific configuration export is committed to this public-facing repository.
 

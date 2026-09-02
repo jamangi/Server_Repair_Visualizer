@@ -2,18 +2,20 @@ import { useEffect, useMemo, useState } from 'react'
 import essayMarkdown from '../docs/research/DELL_9712A_COMPONENT_WALKTHROUGH.md?raw'
 import acronymData from '../docs/research/ACRONYM_MAP.json'
 import { AcronymGlossary, type AcronymMap } from './components/AcronymGlossary'
+import { CableDiagram } from './components/CableDiagram'
 import { MarkdownDocument } from './components/MarkdownDocument'
 import { ServerFixture } from './components/ServerFixture'
 import { lessonContent, type Component } from './content'
 
 const learningModes = ['Study', 'Locate', 'Name'] as const
 type LearningMode = (typeof learningModes)[number]
-type StudyTab = 'visualizer' | 'essay' | 'acronyms'
+type StudyTab = 'visualizer' | 'essay' | 'acronyms' | 'workbench'
 
 const studyTabs: { id: StudyTab; label: string; direction: string }[] = [
   { id: 'visualizer', label: 'Visualizer', direction: 'Appearance → name' },
   { id: 'essay', label: 'Location essay', direction: 'Name → chassis location' },
   { id: 'acronyms', label: 'Acronyms & labels', direction: 'Shorthand → meaning + location' },
+  { id: 'workbench', label: 'Workbench', direction: 'Connection → route + endpoint' },
 ]
 
 const statusLabels = {
@@ -136,12 +138,13 @@ export function App() {
         <div className="study-nav" role="tablist" aria-label="Dell Server 9712a study views">
           {studyTabs.map((tab) => <button key={tab.id} id={`tab-${tab.id}`} type="button" role="tab" aria-selected={activeTab === tab.id} aria-controls={`panel-${tab.id}`} className={activeTab === tab.id ? 'is-active' : ''} onClick={() => chooseTab(tab.id)}><span>{tab.label}</span><small>{tab.direction}</small></button>)}
         </div>
-        {activeTab !== 'visualizer' && <button className="print-button" type="button" onClick={() => window.print()} aria-label={`Print ${activeTabDetails.label}`}><span aria-hidden="true">⌑</span> Print low-ink view</button>}
+        {(activeTab === 'essay' || activeTab === 'acronyms') && <button className="print-button" type="button" onClick={() => window.print()} aria-label={`Print ${activeTabDetails.label}`}><span aria-hidden="true">⌑</span> Print low-ink view</button>}
       </div>
-      <section className="learning-direction" aria-live="polite"><span>{activeTabDetails.direction}</span><p>{activeTab === 'visualizer' ? 'Recognize a component by what and where you see.' : activeTab === 'essay' ? 'Recall where to hunt after hearing a component name.' : 'Decode Dell, NVIDIA, and lesson shorthand without guessing.'}</p></section>
+      <section className="learning-direction" aria-live="polite"><span>{activeTabDetails.direction}</span><p>{activeTab === 'visualizer' ? 'Recognize a component by what and where you see.' : activeTab === 'essay' ? 'Recall where to hunt after hearing a component name.' : activeTab === 'acronyms' ? 'Decode Dell, NVIDIA, and lesson shorthand without guessing.' : 'Trace a cable from one physical endpoint to the other without losing chassis orientation.'}</p></section>
       {activeTab === 'visualizer' && <VisualizerPanel />}
       {activeTab === 'essay' && <main className="reference-page print-section" id="panel-essay" role="tabpanel" aria-labelledby="tab-essay"><article className="document-surface panel"><MarkdownDocument markdown={essayMarkdown} /></article></main>}
       {activeTab === 'acronyms' && <main className="reference-page print-section" id="panel-acronyms" role="tabpanel" aria-labelledby="tab-acronyms"><header className="reference-heading"><p className="eyebrow">Technician reference</p><h1>{(acronymData as AcronymMap).title}</h1><p>Search names, expansions, examples, and physical chassis locations. Confidence labels keep confirmed terms separate from useful working interpretations.</p></header><AcronymGlossary data={acronymData as AcronymMap} /></main>}
+      {activeTab === 'workbench' && <CableDiagram />}
     </div>
   )
 }

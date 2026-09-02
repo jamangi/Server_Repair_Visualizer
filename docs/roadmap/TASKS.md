@@ -34,6 +34,7 @@ These labels are recommendations, not model pins. Current OpenAI model guidance 
 ## Completed detours
 
 - [x] [DETOUR-001-high — Publish the tabbed study shell](detours/DETOUR-001-high-publish-tabbed-study-shell.md) — exposes the Visualizer (appearance → name), Location essay (name → chassis location), and Acronyms & labels views; establishes the initial Pages pipeline.
+- [x] [DETOUR-002-high — Prototype the cable workbench](detours/DETOUR-002-high-prototype-cable-workbench.md) — adds a chassis-anchored cable map, explicit crossing bridges, evidence states, and the cable-mastery roadmap.
 
 ## Phase 3 — Spatial interaction
 
@@ -62,6 +63,14 @@ These labels are recommendations, not model pins. Current OpenAI model guidance 
 - [ ] [TASK-022-xhigh — Add close-up and disassembly scene illustrations](tasks/TASK-022-xhigh.md)
 - [ ] [TASK-023-high — Build a region authoring tool](tasks/TASK-023-high.md)
 - [ ] [TASK-024-high — Generalize lesson packs for additional models](tasks/TASK-024-high.md)
+
+## Phase 7 — Cable-management mastery
+
+- [ ] [TASK-025-xhigh — Verify the connector and cable inventory](tasks/TASK-025-xhigh.md)
+- [ ] [TASK-026-high — Build lane-aware route authoring](tasks/TASK-026-high.md)
+- [ ] [TASK-027-xhigh — Model cable installation order and obstructions](tasks/TASK-027-xhigh.md)
+- [ ] [TASK-028-high — Add cable and connector learning modes](tasks/TASK-028-high.md)
+- [ ] [TASK-029-high — Add tools, fasteners, and refastening order](tasks/TASK-029-high.md)
 
 ## Completed decisions
 
